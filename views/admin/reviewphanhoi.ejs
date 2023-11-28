@@ -1,0 +1,45 @@
+<main class="page manager-page">
+    <section class="clean-block about-us">
+        <div class="container-fluid">
+            <div class="block-heading">
+                <h2 class="text-info">Phản hồi đến thành viên</h2>
+            </div>
+
+
+            <div class="container-center ">
+
+                <div class="tm-product-table-container ">
+                    <table class="table table-hover tm-table-small tm-product-table ">
+                        <thead>
+                            <tr>
+
+                                
+                                <th scope="col" class="tdtentv header">TIÊU ĐỀ</th>
+                                <th scope="col" class="tdtentv header">PHẢN HỒI</th>
+                                <th scope="col" class="tdtentv header">THỜI GIAN</th>
+                                <th scope="col" class="tdtentv header">ID ADMIN</th>
+                                <th scope="col" class="tdtentv header">PHẢN HỒI CHO</th>
+                            </tr>
+                        </thead >
+                        <tbody>
+                            <% listReply.forEach(function(phanhoi) { %>   
+                                <tr>         
+                                        
+                                        <td class="tdtentv"> <%= phanhoi.title %> </td>
+                                        <td class="tdphanhoi"> <%= phanhoi.content %></td>
+                                        <td class="tdphanhoi"> <%= phanhoi.time %></td>
+                                        <td class="tdphanhoi"> <%= phanhoi.adminid %></td>
+                                        <td class="tdphanhoi"> <%= phanhoi.userid %></td>
+                                </tr>
+                            <% }); %>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

@@ -1,0 +1,57 @@
+<main class="page manager-page">
+    <section class="clean-block about-us">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Quản lý bài đăng</h2>
+            </div>
+
+
+            <div class="container-center ">
+
+
+
+                <div class="tm-product-table-container">
+                    <table class="table table-hover tm-table-small tm-product-table">
+                        <thead>
+                            <tr>
+
+                                <th scope="col">TIÊU ĐỀ</th>
+                                <th scope="col">MÔ TẢ</th>
+                                <th scope="col">KHU VỰC</th>
+                                <th scope="col">GIÁ TIỀN</th>
+                                <th scope="col">TRẠNG THÁI</th>
+                                <th scope="col">&nbsp;</th>
+                                <th scope="col">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% listRoom.forEach(function(member) { %> 
+                            <tr>
+
+                                <td class="tm-product-name"><a href="/admin/viewroom/<%= member._id %>" style="text-decoration: none; color: white;"><%= member.title %></a></td>
+                                <td><%= member.description %></td>
+                                <td><%= member.wards %></td>
+                                <td><%= member.cost %></td>
+                                <td><% if (member.status == 0) { %> Đang chờ duyệt <% } else if (member.status == 1) { %> Đã duyệt <% } else { %> Đã bị ban <% } %> 
+                                <td>
+                                    <a href="/admin/accept-room/<%= member._id %>" class="tm-product-delete-link" onclick="return confirm('Bạn muốn duyệt bài này khum?');">             
+                                            <i class="fas fa-check-circle"></i>
+                                    </a>
+                                </td>
+                                <td >
+                                    <a href="/admin/delete-room/<%= member._id %>" class="tm-product-delete-link" onclick="return confirm('Bạn muốn xóa bài này khum?');">
+                                        <i class="far fa-trash-alt"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+    </section>
+
+</main>
